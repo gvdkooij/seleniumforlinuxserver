@@ -14,6 +14,7 @@ sudo apt upgrade
 sudo apt install -y python3-pip
 
 echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
+
 source ~/.bashrc
 
 pip install selenium
