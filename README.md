@@ -2,11 +2,15 @@
 This descripes how to install selenium on a linux server
 
 sudo adduser gvdkooij
+
 sudo usermod -aG sudo gvdkooij
+
 su gvdkooij
 
 sudo apt update
+
 sudo apt upgrade
+
 sudo apt install -y python3-pip
 
 echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
