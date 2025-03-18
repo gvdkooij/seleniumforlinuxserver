@@ -41,7 +41,7 @@ sudo ln -s /opt/chromedriver-linux64/chromedriver /usr/local/bin/chromedriver
 sudo ln -s /opt/chrome-headless-shell-linux64/chrome-headless-shell /usr/local/bin/chrome-headless-shell
 
 
-echo -e "from selenium import webdriver\noptions=webdriver.ChromeOptions() \noptions.add_argument(\\\"--headless\\\")  \ndriver =webdriver.Chrome(options=options)\ndriver.get(\\\"https://www.google.com\\\") \nprint(\\\"Pagina titel:\\\", driver.title) \ndriver.quit()" > test.py
+echo -e "from selenium import webdriver\noptions=webdriver.ChromeOptions() \noptions.add_argument(\\\"--headless\\\")  \ndriver =webdriver.Chrome(options=options)\ndriver.get(\\\"https://www.google.com\") \nprint(\\\"Pagina titel:\\\", driver.title) \ndriver.quit()" > test.py
 
 python3 test.py
 
