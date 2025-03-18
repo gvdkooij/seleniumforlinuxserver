@@ -27,7 +27,9 @@ wget -P ~/Downloads https://storage.googleapis.com/chrome-for-testing-public/134
 wget -P ~/Downloads https://storage.googleapis.com/chrome-for-testing-public/134.0.6998.88/linux64/chrome-headless-shell-linux64.zip
 
 sudo unzip ~/Downloads/chrome-linux64.zip -d /opt
+
 sudo unzip ~/Downloads/chromedriver-linux64.zip -d /opt
+
 sudo unzip ~/Downloads/chrome-headless-shell-linux64.zip -d /opt
 
 rm  -r ~/Downloads
