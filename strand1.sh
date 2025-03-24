@@ -23,5 +23,5 @@ sudo apt install -y php libapache2-mod-php php-mysql
 sudo systemctl start apache2
 sudo systemctl enable apache2
 cd /var/www/html
-mkdir uploads
-chmod 777 uploads
+sudo mkdir uploads
+sudo chmod 777 uploads
