@@ -29,9 +29,10 @@ cd /var/www/html/uploads
 sudo mkdir converted
 sudo chmod 777 converted
 cd /var/www/html
-curl -O https://raw.githubusercontent.com/gvdkooij/seleniumforlinuxserver/refs/heads/main/upload.php
+sudo curl -O https://raw.githubusercontent.com/gvdkooij/seleniumforlinuxserver/refs/heads/main/upload.php
 cd ~
 curl -O https://raw.githubusercontent.com/gvdkooij/seleniumforlinuxserver/refs/heads/main/waakhond.py
+python3 waakhond.py
 
 
 
