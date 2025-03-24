@@ -3,18 +3,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $target_dir = "uploads/";
     $upload_success = [];
     $upload_errors = [];
-
+   
+    // Controleer of de directory bestaat, zo niet, maak deze aan
     if (!file_exists($target_dir)) {
         mkdir($target_dir, 0777, true);
     }
-
+   
+    // Loop door alle geüploade bestanden
     if (isset($_FILES["filesToUpload"])) {
         $fileCount = count($_FILES["filesToUpload"]["name"]);
-
+       
         for ($i = 0; $i < $fileCount; $i++) {
             if ($_FILES["filesToUpload"]["error"][$i] == 0) {
                 $target_file = $target_dir . basename($_FILES["filesToUpload"]["name"][$i]);
-
+               
                 if (move_uploaded_file($_FILES["filesToUpload"]["tmp_name"][$i], $target_file)) {
                     $upload_success[] = htmlspecialchars(basename($_FILES["filesToUpload"]["name"][$i]));
                 } else {
@@ -27,6 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -92,5 +95,55 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
     <h1>Bestanden Uploaden</h1>
+   
+    <?php if (isset($upload_success) || isset($upload_errors)): ?>
+        <?php if (!empty($upload_success)): ?>
+            <div class="result success">
+                <p><strong>Succesvol geüpload:</strong></p>
+                <ul>
+                    <?php foreach ($upload_success as $file): ?>
+                        <li><?php echo $file; ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        <?php endif; ?>
+       
+        <?php if (!empty($upload_errors)): ?>
+            <div class="result error">
+                <p><strong>Fout bij uploaden:</strong></p>
+                <ul>
+                    <?php foreach ($upload_errors as $file): ?>
+                        <li><?php echo $file; ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        <?php endif; ?>
+    <?php endif; ?>
+   
+    <div class="upload-container">
+        <form action="" method="post" enctype="multipart/form-data" id="uploadForm">
+            <input type="file" name="filesToUpload[]" id="filesToUpload" class="file-input" multiple required>
+            <label for="filesToUpload" class="file-label">Selecteer bestanden</label>
+            <div class="selected-files" id="fileList">Geen bestanden geselecteerd</div>
+            <input type="submit" value="Upload Bestanden" class="submit-button">
+        </form>
+    </div>
+   
+    <script>
+        // Script om de geselecteerde bestandsnamen te tonen
+        document.getElementById('filesToUpload').addEventListener('change', function(e) {
+            const fileList = document.getElementById('fileList');
+            if (this.files.length > 0) {
+                let fileNames = '<p><strong>Geselecteerde bestanden:</strong></p><ul>';
+                for (let i = 0; i < this.files.length; i++) {
+                    fileNames += '<li>' + this.files[i].name + '</li>';
+                }
+                fileNames += '</ul>';
+                fileList.innerHTML = fileNames;
+            } else {
+                fileList.innerHTML = 'Geen bestanden geselecteerd';
+            }
+        });
+    </script>
 </body>
-</html>' 
+</html>
