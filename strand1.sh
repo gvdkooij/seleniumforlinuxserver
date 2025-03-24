@@ -1,4 +1,5 @@
-sudo apt update && sudo apt full-upgrade -y
+sudo apt update
+sudo DEBIAN_FRONTEND=noninteractive apt full-upgrade -y
 sudo apt install -y python3-pip
 echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
