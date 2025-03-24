@@ -25,3 +25,8 @@ sudo systemctl enable apache2
 cd /var/www/html
 sudo mkdir uploads
 sudo chmod 777 uploads
+cd /var/www/html/uploads
+sudo mkdir converted
+sudo chmod 777 converted
+
+
