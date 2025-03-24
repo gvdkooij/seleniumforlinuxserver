@@ -17,7 +17,7 @@ sudo ln -s /opt/chrome-headless-shell-linux64/chrome-headless-shell /usr/local/b
 cd ~
 sudo echo -e "from selenium import webdriver\noptions=webdriver.ChromeOptions() \noptions.add_argument(\"--headless\")  \ndriver =webdriver.Chrome(options=options)\ndriver.get(\"https://www.google.com\") \nprint(\"Pagina titel:\", driver.title) \ndriver.quit()" > test.py
 python3 test.py
-sudo apt install apache2
+sudo apt install -y apache2
 sudo apt install php libapache2-mod-php php-mysql
 sudo systemctl start apache2
 sudo systemctl enable apache2
