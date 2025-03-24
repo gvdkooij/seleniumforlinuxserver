@@ -1,5 +1,4 @@
-sudo apt update
-sudo apt upgrade
+sudo apt update && sudo apt full-upgrade -y
 sudo apt install -y python3-pip
 echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
@@ -22,6 +21,7 @@ sudo apt install -y apache2
 sudo apt install -y php libapache2-mod-php php-mysql
 sudo systemctl start apache2
 sudo systemctl enable apache2
+pip install watchdog pillow numpy selenium webdriver-manager
 cd /var/www/html
 sudo mkdir uploads
 sudo chmod 777 uploads
@@ -33,6 +33,8 @@ sudo curl -O https://raw.githubusercontent.com/gvdkooij/seleniumforlinuxserver/r
 cd ~
 curl -O https://raw.githubusercontent.com/gvdkooij/seleniumforlinuxserver/refs/heads/main/waakhond.py
 python3 waakhond.py
+
+
 
 
 
