@@ -1,4 +1,4 @@
-echo '<?php
+<?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $target_dir = "uploads/";
     $upload_success = [];
