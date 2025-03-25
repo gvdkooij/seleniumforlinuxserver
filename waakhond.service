@@ -1,0 +1,15 @@
+[Unit]
+Description=Mijn Python Monitor Service
+After=network.target
+
+[Service]
+ExecStart=/opt/waakhond/waahkond.py
+WorkingDirectory=/opt/
+User=gvdkooij
+Group=gvdkooij
+Restart=always
+Environment=PATH=/usr/bin:/usr/local/bin
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
