@@ -39,7 +39,14 @@ curl -O https://raw.githubusercontent.com/gvdkooij/seleniumforlinuxserver/refs/h
 chmod +x waakhond.py
 waakhond.py
 
+cd /etc/systemd/system/
+curl -O https://raw.githubusercontent.com/gvdkooij/seleniumforlinuxserver/refs/heads/main/waakhond.service
 sudo nano /etc/systemd/system/waakhond.service
+sudo systemctl daemon-reload
+sudo systemctl start waakhond.service
+sudo systemctl enable waakhond.service
+sudo systemctl status waakhond.service
+
 
 
 
