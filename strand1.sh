@@ -1,4 +1,19 @@
 set -x
+read -p "Voer je e-mailadres in: " email
+read -s -p "Voer je wachtwoord in: " password
+echo ""
+
+# Opslaan in een tekstbestand
+sudo echo "$email" > /opt/waakhond/credentials.txt
+sudo echo "$password" >> /opt/waakhond/credentials.txt
+
+echo "Gegevens opgeslagen in credentials.txt"
+
+
+
+
+
+
 sudo apt update
 sudo apt upgrade -y
 sudo touch /var/run/reboot-required.skip
