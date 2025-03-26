@@ -2,6 +2,7 @@ set -x
 
 sudo mkdir /opt/waakhond/
 read -p "Voer je e-mailadres in: " email
+
 read -p "Voer je wachtwoord in: " password
 echo ""
 
