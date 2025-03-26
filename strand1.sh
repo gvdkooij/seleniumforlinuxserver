@@ -33,7 +33,7 @@ sudo mkdir converted
 sudo chmod 777 converted
 cd /var/www/html
 sudo curl -O https://raw.githubusercontent.com/gvdkooij/seleniumforlinuxserver/refs/heads/main/upload.php
-mkdir /opt/waakhond
+sudo mkdir /opt/waakhond
 cd /opt/waakhond
 curl -O https://raw.githubusercontent.com/gvdkooij/seleniumforlinuxserver/refs/heads/main/waakhond.py
 chmod +x waakhond.py
