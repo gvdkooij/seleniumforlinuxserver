@@ -1,6 +1,11 @@
  set -x
-sudo adduser --disabled-password --gecos "" gvdkooij
-echo "gvdkooij:Rijnweg201" | sudo chpasswd
+ 
+#sudo adduser --disabled-password --gecos "" gvdkooij
+#echo "gvdkooij:Rijnweg201" | sudo chpasswd
+
+sudo useradd -m -s /bin/bash gvdkooij
+sudo passwd -d gvdkooij
+
 sudo usermod -aG sudo gvdkooij
 sudo mkdir -p /home/gvdkooij/scripts
 sudo chown gvdkooij:gvdkooij /home/gvdkooij/scripts
