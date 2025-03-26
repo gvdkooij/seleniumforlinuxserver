@@ -60,7 +60,7 @@ sudo curl -O https://raw.githubusercontent.com/gvdkooij/seleniumforlinuxserver/r
 sudo systemctl daemon-reload
 sudo systemctl start waakhond.service
 sudo systemctl enable waakhond.service
-sudo systemctl status waakhond.service
+sudo systemctl status waakhond.service --no-pager
 
 
 
