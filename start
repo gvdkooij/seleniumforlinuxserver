@@ -1,0 +1,1 @@
+curl -O https://raw.githubusercontent.com/gvdkooij/seleniumforlinuxserver/refs/heads/main/iniitalize.sh && chmod +x iniitalize.shc&& ./iniitalize.sh
