@@ -10,6 +10,16 @@ from PIL import Image, ImageFilter, ImageDraw
 import numpy
 import sys
 import os
+
+with open("/opt/waakhond/credentials.txt", "r") as f:
+    lines = f.readlines()
+    email = lines[0].strip()
+    password = lines[1].strip()
+
+print(f"Logging in with email: {email}")
+# Hier komt jouw inlogcode met email en password
+
+
 options = Options()
 options.add_argument("--headless")
 driver = webdriver.Chrome(options=options)
@@ -18,13 +28,13 @@ time.sleep(5)
 driver.find_element(By.CSS_SELECTOR, ".cky-btn-accept").click()
 time.sleep(3)
 email_field = driver.find_element(By.ID, "LoginFormEmailInput")
-email_field.send_keys("gvdkooij@gmail.com")
+email_field.send_keys(email)
 time.sleep(3)
 next_button = driver.find_element(By.XPATH, "//span[text()='Next']")
 next_button.click()
 time.sleep(5)
 password_field = driver.find_element(By.ID, "LoginFormPasswordInput")
-password_field.send_keys("Rijnweg201")
+password_field.send_keys(password)
 time.sleep(4)
 login_button = driver.find_element(By.XPATH, "//span[text()='Log in']")
 login_button.click()
