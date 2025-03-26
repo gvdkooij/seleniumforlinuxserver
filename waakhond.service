@@ -3,7 +3,7 @@ Description=Mijn Python Monitor Service
 After=network.target
 
 [Service]
-ExecStart=/opt/waakhond/waahkond.py
+ExecStart=/opt/waakhond/waakhond.py
 WorkingDirectory=/opt/
 User=gvdkooij
 Group=gvdkooij
