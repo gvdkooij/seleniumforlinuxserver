@@ -35,12 +35,11 @@ cd /var/www/html
 sudo curl -O https://raw.githubusercontent.com/gvdkooij/seleniumforlinuxserver/refs/heads/main/upload.php
 sudo mkdir /opt/waakhond
 cd /opt/waakhond
-curl -O https://raw.githubusercontent.com/gvdkooij/seleniumforlinuxserver/refs/heads/main/waakhond.py
-chmod +x waakhond.py
-waakhond.py
+sudo curl -O https://raw.githubusercontent.com/gvdkooij/seleniumforlinuxserver/refs/heads/main/waakhond.py
+sudo chmod +x waakhond.py
 
 cd /etc/systemd/system/
-curl -O https://raw.githubusercontent.com/gvdkooij/seleniumforlinuxserver/refs/heads/main/waakhond.service
+sudo curl -O https://raw.githubusercontent.com/gvdkooij/seleniumforlinuxserver/refs/heads/main/waakhond.service
 sudo nano /etc/systemd/system/waakhond.service
 sudo systemctl daemon-reload
 sudo systemctl start waakhond.service
