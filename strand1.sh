@@ -55,7 +55,6 @@ sudo chmod +x waakhond.py
 
 cd /etc/systemd/system/
 sudo curl -O https://raw.githubusercontent.com/gvdkooij/seleniumforlinuxserver/refs/heads/main/waakhond.service
-sudo nano /etc/systemd/system/waakhond.service
 sudo systemctl daemon-reload
 sudo systemctl start waakhond.service
 sudo systemctl enable waakhond.service
