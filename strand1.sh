@@ -1,22 +1,12 @@
 set -x
-
 sudo mkdir /opt/waakhond/
 read -p "Voer je e-mailadres in: " email
-
 read -p "Voer je wachtwoord in: " password
 echo ""
-
 # Opslaan in een tekstbestand
 echo "$email" | sudo tee /opt/waakhond/credentials.txt > /dev/null
 echo "$password" | sudo tee -a /opt/waakhond/credentials.txt > /dev/null
-
 echo "Gegevens opgeslagen in credentials.txt"
-
-
-
-
-
-
 sudo apt update
 sudo apt upgrade -y
 sudo touch /var/run/reboot-required.skip
@@ -55,7 +45,6 @@ sudo mkdir /opt/waakhond
 cd /opt/waakhond
 sudo curl -O https://raw.githubusercontent.com/gvdkooij/seleniumforlinuxserver/refs/heads/main/waakhond.py
 sudo chmod +x waakhond.py
-
 cd /etc/systemd/system/
 sudo curl -O https://raw.githubusercontent.com/gvdkooij/seleniumforlinuxserver/refs/heads/main/waakhond.service
 sudo systemctl daemon-reload
