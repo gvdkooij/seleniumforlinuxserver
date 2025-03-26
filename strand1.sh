@@ -4,8 +4,8 @@ read -s -p "Voer je wachtwoord in: " password
 echo ""
 
 # Opslaan in een tekstbestand
-sudo echo "$email" > /opt/waakhond/credentials.txt
-sudo echo "$password" >> /opt/waakhond/credentials.txt
+echo "$email" | sudo tee /opt/waakhond/credentials.txt > /dev/null
+echo "$password" | sudo tee -a /opt/waakhond/credentials.txt > /dev/null
 
 echo "Gegevens opgeslagen in credentials.txt"
 
