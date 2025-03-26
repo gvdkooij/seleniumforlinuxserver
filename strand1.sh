@@ -1,8 +1,8 @@
 set -x
 
 sudo mkdir /opt/waakhond/
-read -p "Voer je e-mailadres in: " email
-read -s -p "Voer je wachtwoord in: " password
+sudo read -p "Voer je e-mailadres in: " email
+sudo read -s "Voer je wachtwoord in: " password
 echo ""
 
 # Opslaan in een tekstbestand
