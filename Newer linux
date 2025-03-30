@@ -7,3 +7,5 @@ deactivate
 
 source myenv/bin/activate
 
+sudo apt install chromium-chromedriver -y
+
